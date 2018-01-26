@@ -1,0 +1,30 @@
+{
+    "name": "payjoy-exam",
+    "description": "" ,
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ricardo Ruiz",
+            "email": "rrcfesc@gmail.com"
+        }
+    ],
+    "require":{
+        "php"                       : ">=5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "php-coveralls/php-coveralls": "dev-master",
+        "phpunit/phpcov": "^2.0",
+        "squizlabs/php_codesniffer": "1.5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rioxygen\\PayJoy\\": "src"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4" : {
+                "Rioxygen\\PayJoy\\" : "tests/"
+        }
+    }
+}
