@@ -41,10 +41,43 @@ class ReverseKeys
     {
         $respuesta      = "";
         $encontrado     = false;
+        $indice         = -1;
+        $anterior       = "";
         $arr1           = str_split($stringValue);
         foreach ($arr1 as $val) {
-            var_dump($val);
+            if ($val != " ") {
+                switch ($anterior) {
+                    case "":
+                        if (array_key_exists($val, $this->marcacion)) {
+                            $indice     += 1;
+                            $anterior   = $val;
+                        }
+                        break;
+                    default :
+                        if ($anterior != $val) {
+                            $respuesta .= $this->marcacion[$anterior][$indice];
+                            $indice         = -1;
+                            $respuesta     .= "";
+                            $anterior       = "";
+                        }
+                        if (array_key_exists($val, $this->marcacion)) {
+                            $indice     += 1;
+                            $anterior   = $val;
+                        }
+                        break;
+                }
+            } else {
+                if ($indice != -1)  {
+                    $respuesta .= $this->marcacion[$anterior][$indice];
+                }
+                $indice         = -1;
+                $respuesta     .= "";
+                $anterior       = "";
+            }
         }
-        return $respuesta;
+        if ($indice != -1)  {
+                $respuesta .= $this->marcacion[$anterior][$indice];
+            }
+        return strtolower($respuesta);
     }
 }
