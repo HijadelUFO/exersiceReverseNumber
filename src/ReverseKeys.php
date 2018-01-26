@@ -19,8 +19,8 @@ class ReverseKeys
     public function __construct()
     {
         $this->marcacion = array(
-            '0' => array("+"),
-            '1' => array(""),
+            '0' => array(" "),
+            '1' => array(" "),
             '2' => array("A", "B", "C"),
             '3' => array("D", "E", "F"),
             '4' => array("G", "H", "I"),

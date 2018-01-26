@@ -42,7 +42,7 @@ class ReverseKeysTest extends \PHPUnit_Framework_TestCase
     }
     public function testcuatro()
     {
-        $input = "2 22 223 33 3334 44 4445 55 5556 66 666";
+        $input = "2 22 2223 33 3334 44 4445 55 5556 66 666";
         $output = $this->classTest->reverse_t9($input);
         $this->assertEquals($output, "abcdefghijklmno");
     }
